@@ -361,7 +361,7 @@ instance Storable Mesh where
     normals <- peekArray vertexCount =<< peek (p'mesh'normals _p)
     tangents <- peekMaybeArray vertexCount =<< peek (p'mesh'tangents _p)
     colors <- peekMaybeArray vertexCount =<< peek (p'mesh'colors _p)
-    indices <- (map fromIntegral <$>) <$> (peekMaybeArray vertexCount =<< peek (p'mesh'indices _p))
+    indices <- (map fromIntegral <$>) <$> (peekMaybeArray (triangleCount * 3) =<< peek (p'mesh'indices _p))
     animVertices <- peekMaybeArray vertexCount =<< peek (p'mesh'animVertices _p)
     animNormals <- peekMaybeArray vertexCount =<< peek (p'mesh'animNormals _p)
     boneCount <- fromIntegral <$> peek (p'mesh'boneCount _p)
