@@ -182,7 +182,7 @@ unsigned int rlLoadTexture_(const void *a, int b, int c, int d, int e);
 
 unsigned int rlLoadTextureDepth_(int a, int b, bool c);
 
-unsigned int rlLoadTextureCubemap_(const void *a, int b, int c);
+unsigned int rlLoadTextureCubemap_(const void *data, int size, int format, int mipmapCount);
 
 void rlUpdateTexture_(unsigned int a, int b, int c, int d, int e, int f, const void *g);
 

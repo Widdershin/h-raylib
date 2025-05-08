@@ -454,9 +454,9 @@ RLBIND unsigned int rlLoadTextureDepth_(int a, int b, bool c)
   return rlLoadTextureDepth(a, b, c);
 }
 
-RLBIND unsigned int rlLoadTextureCubemap_(const void *a, int b, int c)
+RLBIND unsigned int rlLoadTextureCubemap_(const void *data, int size, int format, int mipmapCount)
 {
-  return rlLoadTextureCubemap(a, b, c);
+  return rlLoadTextureCubemap(data, size, format, mipmapCount);
 }
 
 RLBIND void rlUpdateTexture_(unsigned int a, int b, int c, int d, int e, int f, const void *g)
