@@ -353,6 +353,7 @@ instance Storable Mesh where
   sizeOf _ = 120
   alignment _ = 8
   peek _p = do
+    error "<<<<<<<<<< PEEK MESH ERROR >>>>>>>>>>>>>"
     vertexCount <- fromIntegral <$> peek (p'mesh'vertexCount _p)
     triangleCount <- fromIntegral <$> peek (p'mesh'triangleCount _p)
     vertices <- peekArray vertexCount =<< peek (p'mesh'vertices _p)
