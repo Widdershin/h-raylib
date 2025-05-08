@@ -1625,9 +1625,9 @@ RLBIND bool IsModelAnimationValid_(Model *a, ModelAnimation *b)
     return IsModelAnimationValid(*a, *b);
 }
 
-RLBIND void UpdateModelAnimationBoneMatrices_(Model *a, ModelAnimation *b, int c)
+RLBIND void UpdateModelAnimationBones_(Model *a, ModelAnimation *b, int c)
 {
-    UpdateModelAnimationBoneMatrices(*a, *b, c);
+    UpdateModelAnimationBones(*a, *b, c);
 }
 
 RLBIND bool CheckCollisionSpheres_(Vector3 *a, float b, Vector3 *c, float d)

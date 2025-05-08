@@ -574,7 +574,7 @@ void UnloadModelAnimation_(ModelAnimation *a);
 
 bool IsModelAnimationValid_(Model *a, ModelAnimation *b);
 
-void UpdateModelAnimationBoneMatrices_(Model *a, ModelAnimation *b, int c);
+void UpdateModelAnimationBones_(Model *a, ModelAnimation *b, int c);
 
 bool CheckCollisionSpheres_(Vector3 *a, float b, Vector3 *c, float d);
 
