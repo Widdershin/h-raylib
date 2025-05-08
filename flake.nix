@@ -9,10 +9,10 @@
       forAllSystems' = nixpkgs.lib.genAttrs;
       forAllSystems = forAllSystems' supportedSystems;
 
-      raylibRev = "2a0963ce0936abe0cd3ec32882638d860e435d16";
-      raylibHash = "sha256-4p3nq04irS8AFojH88Bh1r8KiOjQhZf7nFmQhf1EDU8=";
-      rayguiRev = "1e03efca48c50c5ea4b4a053d5bf04bad58d3e43";
-      rayguiHash = "sha256-PzQZxCz63EPd7sVFBYY0T1s9jA5kOAxF9K4ojRoIMz4=";
+      raylibRev = "1402e830b47e954e528b520d4ccfb69835d23fdc";
+      raylibHash = "sha256-tMoGHv6F0h9T1D9YFDNdpnY8kyBoC1dwfi270exDR/E=";
+      rayguiRev = "cb78993237b4887fb0277317483b1c757d8ffc14";
+      rayguiHash = "sha256-lbONh4RFaI2gMOvOAO84oAY3Mr0oaPsHYojiRBgy6tw=";
 
       pkgsForSystem =
         system:
@@ -22,7 +22,7 @@
             (self: super: {
               raylib = super.raylib.overrideAttrs (old: {
                 patches = [];
-                version = "5.0.0";
+                version = "1402e830b47e954e528b520d4ccfb69835d23fdc";
                 src = self.fetchFromGitHub {
                   owner = "raysan5";
                   repo = "raylib";
@@ -33,7 +33,7 @@
               });
               raygui = super.stdenv.mkDerivation { # A bit of a hack to get raygui working
                 name = "raygui";
-                version = "4.1.0";
+                version = "cb78993237b4887fb0277317483b1c757d8ffc14";
                 src = self.fetchFromGitHub {
                   owner = "raysan5";
                   repo = "raygui";
