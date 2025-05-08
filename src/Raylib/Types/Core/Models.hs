@@ -779,7 +779,7 @@ data ModelAnimation = ModelAnimation
 
 instance Storable ModelAnimation where
   sizeOf _ = 56
-  alignment _ = 4
+  alignment _ = 8
   peek _p = do
     boneCount <- fromIntegral <$> peek (p'modelAnimation'boneCount _p)
     frameCount <- fromIntegral <$> peek (p'modelAnimation'frameCount _p)
