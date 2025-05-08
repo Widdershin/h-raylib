@@ -9,8 +9,8 @@
       forAllSystems' = nixpkgs.lib.genAttrs;
       forAllSystems = forAllSystems' supportedSystems;
 
-      raylibRev = "1402e830b47e954e528b520d4ccfb69835d23fdc";
-      raylibHash = "sha256-tMoGHv6F0h9T1D9YFDNdpnY8kyBoC1dwfi270exDR/E=";
+      raylibRev = "c1ab645ca298a2801097931d1079b10ff7eb9df8";
+      raylibHash = "sha256-J99i4z4JF7d6mJNuJIB0rHNDhXJ5AEkG0eBvvuBLHrY=";
       rayguiRev = "cb78993237b4887fb0277317483b1c757d8ffc14";
       rayguiHash = "sha256-lbONh4RFaI2gMOvOAO84oAY3Mr0oaPsHYojiRBgy6tw=";
 
@@ -22,7 +22,7 @@
             (self: super: {
               raylib = super.raylib.overrideAttrs (old: {
                 patches = [];
-                version = "1402e830b47e954e528b520d4ccfb69835d23fdc";
+                version = "5.5";
                 src = self.fetchFromGitHub {
                   owner = "raysan5";
                   repo = "raylib";
