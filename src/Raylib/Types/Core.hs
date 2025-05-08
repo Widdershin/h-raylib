@@ -785,47 +785,47 @@ instance Storable Matrix where
 p'matrix'm0 :: Ptr Matrix -> Ptr CFloat
 p'matrix'm0 = (`plusPtr` 0)
 
-p'matrix'm4 :: Ptr Matrix -> Ptr CFloat
-p'matrix'm4 = (`plusPtr` 4)
-
-p'matrix'm8 :: Ptr Matrix -> Ptr CFloat
-p'matrix'm8 = (`plusPtr` 8)
-
-p'matrix'm12 :: Ptr Matrix -> Ptr CFloat
-p'matrix'm12 = (`plusPtr` 12)
-
 p'matrix'm1 :: Ptr Matrix -> Ptr CFloat
-p'matrix'm1 = (`plusPtr` 16)
+p'matrix'm1 = (`plusPtr` 4)
+
+p'matrix'm2 :: Ptr Matrix -> Ptr CFloat
+p'matrix'm2 = (`plusPtr` 8)
+
+p'matrix'm3 :: Ptr Matrix -> Ptr CFloat
+p'matrix'm3 = (`plusPtr` 12)
+
+p'matrix'm4 :: Ptr Matrix -> Ptr CFloat
+p'matrix'm4 = (`plusPtr` 16)
 
 p'matrix'm5 :: Ptr Matrix -> Ptr CFloat
 p'matrix'm5 = (`plusPtr` 20)
 
-p'matrix'm9 :: Ptr Matrix -> Ptr CFloat
-p'matrix'm9 = (`plusPtr` 24)
-
-p'matrix'm13 :: Ptr Matrix -> Ptr CFloat
-p'matrix'm13 = (`plusPtr` 28)
-
-p'matrix'm2 :: Ptr Matrix -> Ptr CFloat
-p'matrix'm2 = (`plusPtr` 32)
-
 p'matrix'm6 :: Ptr Matrix -> Ptr CFloat
-p'matrix'm6 = (`plusPtr` 36)
+p'matrix'm6 = (`plusPtr` 24)
+
+p'matrix'm7 :: Ptr Matrix -> Ptr CFloat
+p'matrix'm7 = (`plusPtr` 28)
+
+p'matrix'm8 :: Ptr Matrix -> Ptr CFloat
+p'matrix'm8 = (`plusPtr` 32)
+
+p'matrix'm9 :: Ptr Matrix -> Ptr CFloat
+p'matrix'm9 = (`plusPtr` 36)
 
 p'matrix'm10 :: Ptr Matrix -> Ptr CFloat
 p'matrix'm10 = (`plusPtr` 40)
 
-p'matrix'm14 :: Ptr Matrix -> Ptr CFloat
-p'matrix'm14 = (`plusPtr` 44)
-
-p'matrix'm3 :: Ptr Matrix -> Ptr CFloat
-p'matrix'm3 = (`plusPtr` 48)
-
-p'matrix'm7 :: Ptr Matrix -> Ptr CFloat
-p'matrix'm7 = (`plusPtr` 52)
-
 p'matrix'm11 :: Ptr Matrix -> Ptr CFloat
-p'matrix'm11 = (`plusPtr` 56)
+p'matrix'm11 = (`plusPtr` 44)
+
+p'matrix'm12 :: Ptr Matrix -> Ptr CFloat
+p'matrix'm12 = (`plusPtr` 48)
+
+p'matrix'm13 :: Ptr Matrix -> Ptr CFloat
+p'matrix'm13 = (`plusPtr` 52)
+
+p'matrix'm14 :: Ptr Matrix -> Ptr CFloat
+p'matrix'm14 = (`plusPtr` 56)
 
 p'matrix'm15 :: Ptr Matrix -> Ptr CFloat
 p'matrix'm15 = (`plusPtr` 60)
