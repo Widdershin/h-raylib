@@ -74,6 +74,8 @@
         in {
           default = import ./default.nix baseInputs;
           examples = import ./default.nix (baseInputs // rec { buildExamples = true; });
+          raylib = pkgs.raylib;
+          raygui = pkgs.raygui;
         });
       };
 }
