@@ -28,6 +28,7 @@ module Raylib.Util
     -- * Miscellaneous
     cameraDirectionRay,
     setMaterialShader,
+    setMaterialMapColor,
     inGHCi,
     inWeb,
     Freeable (..),
@@ -44,7 +45,9 @@ import Raylib.Types
   ( BlendMode,
     Camera2D,
     Camera3D (camera3D'position, camera3D'target),
-    Material (material'shader),
+    Material (material'shader, material'maps),
+    MaterialMap (materialMap'color),
+    Color,
     Model (model'materials),
     Ray (Ray),
     RenderTexture,
@@ -307,6 +310,9 @@ whileWindowOpen0 ::
   m ()
 whileWindowOpen0 f = whileWindowOpen (const f) ()
 
+setIdx :: [a] -> Int -> a -> [a]
+setIdx l i v = take i l ++ [v] ++ drop (i + 1) l
+
 -- | Sets the shader of a material at a specific index (WARNING: This will fail
 -- if the index provided is out of bounds).
 setMaterialShader ::
@@ -322,7 +328,33 @@ setMaterialShader model matIdx shader = model {model'materials = setIdx mats mat
   where
     mats = model'materials model
     newMat = (mats !! matIdx) {material'shader = shader}
-    setIdx l i v = take i l ++ [v] ++ drop (i + 1) l
+
+setMaterialMapColor ::
+  -- | The model to operate on
+  Model ->
+  -- | The index of the material
+  Int ->
+  -- | The index of the map
+  Int ->
+  -- | The color to use
+  Color ->
+  -- | The modified model
+  Model
+setMaterialMapColor model matIdx mapIdx color = model {model'materials = setIdx mats matIdx newMat}
+  where
+    mats = model'materials model
+    mat  = (mats !! matIdx)
+
+    maybeMaps = material'maps mat
+
+    newMat = case maybeMaps of
+      Nothing -> error "Material has no maps"
+      Just maps ->
+        let
+          existingMap = maps !! mapIdx
+          newMap = existingMap {materialMap'color = color}
+        in
+          (mats !! matIdx) {material'maps = Just (setIdx maps mapIdx newMap)}
 
 -- | True if the program is running in GHCi
 inGHCi :: Bool
